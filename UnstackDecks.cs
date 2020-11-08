@@ -188,10 +188,10 @@ namespace UnstackDecks
         private RectangleF GetClientRectFromPoint(Point pos, int width, int height)
         {
             return new RectangleF(
-                _InventoryRect.X + _CellSize * pos.X,
-                _InventoryRect.Y + _CellSize * pos.Y,
-                width * _CellSize,
-                height * _CellSize);
+                _InventoryRect.X + pos.X + _CellSize * pos.X,
+                _InventoryRect.Y + pos.Y + _CellSize * pos.Y,
+                pos.X + width * _CellSize,
+                pos.Y + height * _CellSize);
         }
 
         private IEnumerator SmoothlyMoveCursor(Vector2 to)
